@@ -6,7 +6,7 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:37:35 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/12 15:43:47 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/01/20 17:55:19 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,27 @@ static int	ft_check_char(char *str, int *tab)
 
 static int	ft_check_line(char *s)
 {
-	int cnt;
+	int ch;
+	int line;
 
+	line = 0;
 	while (*s)
 	{
-		cnt = 0;
+		ch = 0;
 		while (*s != '\n')
 		{
 			s++;
-			cnt++;
+			ch++;
 		}
-		if (cnt != 4)
-			ft_error();
-		else if (*s == '\n' && *(s + 1) == '\n')
+		line++;
+		if ((*s == '\n' && *(s + 1) == '\n')
+				|| (*s == '\n' && *(s + 1) == '\0'))
+		{
+			if (line != 4 || ch != 4)
+				ft_error();
 			s += 2;
+			line = 0;
+		}
 		else
 			s++;
 	}
