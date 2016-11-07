@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qdiaz <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/18 10:35:28 by qdiaz             #+#    #+#              #
-#    Updated: 2016/01/12 15:30:43 by adu-pelo         ###   ########.fr        #
+#    Created: 2016/11/07 15:00:48 by adu-pelo          #+#    #+#              #
+#    Updated: 2016/11/07 15:02:13 by adu-pelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all clean fclean re
+NAME	= fillit
 
-NAME = ./fillit
+LIBFT	= ./libft/libft.a
 
-SRCS = 	fillit.c\
+SRCS	= fillit.c\
 		ft_get_file.c\
 		ft_check_file.c\
 		ft_count_tetri.c\
@@ -24,25 +24,24 @@ SRCS = 	fillit.c\
 		ft_resolve_tools.c\
 		ft_split_tetri.c\
 
-LIBFT = ./libft/libft.a
+OBJS	= $(SRCS:.c=.o)
 
-OBJS = $(SRCS:.c=.o)
-
-RM = rm -rf
+RM		= rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		gcc -o $(NAME) $(SRCS) $(LIBFT) -I.
+	gcc -o $(NAME) $(SRCS) $(LIBFT) -I.
 
 %.o: %.c
 	gcc -Wall -Werror -Wextra -c $^
 
 clean:
-		$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-		$(RM) $(NAME) fillit.h.gch
+	$(RM) $(NAME)
 
 re: fclean all
 
+.PHONY: all clean fclean re
