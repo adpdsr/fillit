@@ -1,7 +1,7 @@
 #fillit
   
-42 school project (Paris, France)
+Projet Ecole 42 (Paris)
   
 ##Synopsis
   
-The goal of this project was to create a program matching a list of Tetriminos (Tetris pieces) to get the smallest square in which they can fit. Fillit take as an argument a list containing between 1 and 26 pieces, the list must be formated as the files contained in the test folder. The result is a square containing the different pieces written on the standard output.
+Le but de ce projet était de créer un programme qui agence une série de pièces de Tetris afin d'obtenir le plus petit carré possible pouvant les contenir. Fillit prend en argument un fichier decrivant la liste des pièces à agancer, le formatage doit être le même que celui des fichiers contenus dans le dossier tests. Le résultat est écrit sur la sortie standard, la première pièce est représentée avec la lettre A, la seconde avec B, etc.
