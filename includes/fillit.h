@@ -6,14 +6,14 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 13:06:40 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/12 15:41:40 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/11/09 12:51:15 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
